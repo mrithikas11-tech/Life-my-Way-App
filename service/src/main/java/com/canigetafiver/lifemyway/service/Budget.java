@@ -1,10 +1,64 @@
 package com.canigetafiver.lifemyway.service;
 
-public interface Budget {
-  void setBudget(double budget); //should be able to set the budget
-  double getBudget(); //should be able to get the budget
-  void calculateRemaining(double amount); //should be able to calculate the total spent so far and update the spent variable
-  double getRemaining(); //should be able to get the remaining budget without updating the spent variable
-  boolean isExceeded(); //should be able to mention if the budget is exceeded 
-  void resetBudget(); //should be able to reset the budget and spent amount for a new period    
+public class Budget {
+    private double amount;
+    private double spent;
+    private double remaining;
+    private Period period;
+    private Category category;
+
+    public Budget(double amount, Period period, Category category){
+        this.amount = amount; 
+        this.spent = 0; 
+        this.remaining = amount; 
+        this.period = period;
+        this.category = category;
+    }
+
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+    
+    public double getAmount() {
+        return this.amount;
+    }
+
+    public void setPeriod(Period period) {
+        this.period = period;
+    }
+
+    public Period getPeriod() {
+        return this.period;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+   
+    public Category getCategory() {
+        return this.category;
+    }
+
+    public void calculateRemaining(double spending) {
+        spent += spending;
+        remaining =this.amount - this.spent;
+    }
+
+
+    public double getRemaining() {
+        return this.remaining;
+    }
+ 
+    public boolean isExceeded() {
+        return this.spent > this.amount;
+    }
+
+  
+    public void resetBudget() {
+        this.amount = 0;
+        this.spent = 0; 
+        this.remaining = 0;
+    }
+    
 }
