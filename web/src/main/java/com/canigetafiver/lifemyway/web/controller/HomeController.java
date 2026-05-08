@@ -8,6 +8,9 @@ import com.canigetafiver.lifemyway.web.nav.View;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+/**
+ * FXML controller for HomeView backing (post-login dashboard)
+ */
 public class HomeController {
     @FXML private Label welcomeLabel;
 

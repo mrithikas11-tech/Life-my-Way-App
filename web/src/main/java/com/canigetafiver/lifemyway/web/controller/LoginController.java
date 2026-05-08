@@ -40,7 +40,7 @@ public class LoginController {
             statusLabel.setText(result.message());
         }
     }
-    @FXML private void onRegister(){
+    @FXML private void onGoToRegister(){
         NavigationController.getInstance().navigateTo(View.REGISTER);
     }
 }

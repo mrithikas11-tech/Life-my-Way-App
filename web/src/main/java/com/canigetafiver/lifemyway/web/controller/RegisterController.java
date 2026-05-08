@@ -8,6 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+/**
+ * FXML controller for RegisterView backing
+ */
 public class RegisterController {
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
