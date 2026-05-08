@@ -76,7 +76,7 @@ public class AuthenticationService {
     public boolean isAuthenticated(){
         return state.isAuthenticated();
     }
-    public Optional<AuthSession> session(){
+    public Optional<AuthSession> currentSession(){
         return state.session();
     }
     
