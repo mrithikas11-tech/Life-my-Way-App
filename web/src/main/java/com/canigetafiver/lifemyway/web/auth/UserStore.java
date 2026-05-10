@@ -15,11 +15,11 @@ public interface UserStore {
      * internal user rep for auth module
      * passwordHash is in SHA-256 hex,never plaintext
      */
-    record StoredUser(String username, String displayName,String passwordHash){
+    record StoredUser(String username, String passwordHash, String displayName){
         public StoredUser{
             Objects.requireNonNull(username, "username required");
-            Objects.requireNonNull(displayName, "displayName required");
-            Objects.requireNonNull(passwordHash, "passwordHash required");      
+            Objects.requireNonNull(passwordHash, "passwordHash required"); 
+            Objects.requireNonNull(displayName, "displayName required");     
         }
     }
 }
