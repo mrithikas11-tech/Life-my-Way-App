@@ -1,11 +1,24 @@
 package com.canigetafiver.lifemyway.controllers;
 
-/**
- * Placeholder report generator.
- *
- * Created because the requested class does not exist in this local checkout.
- */
-public class ReportGenerator {
-    // TODO: implement report generation
-}
 
+import com.canigetafiver.lifemyway.api.Expense;
+
+import java.util.List;
+
+public class ReportGenerator {
+
+    public double calculateTotalExpenses(List<Expense> expenses) {
+
+        double total = 0;
+
+        for (Expense expense : expenses) {
+            total += expense.getAmount();
+        }
+
+        return total;
+    }
+
+    public int countExpenses(List<Expense> expenses) {
+        return expenses.size();
+    }
+}
